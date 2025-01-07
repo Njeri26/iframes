@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+   <!---- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">-->
+    <!---->
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' https://www.esomakids.com/edtech">
+    <!---->
+    <meta http-equiv="X-Frame-Options" content="ALLOW-FROM https://www.esomakids.com/edtech">
+</head>
+<link rel="stylesheet" href="iframe.css">
+<section>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img id="iframe-icon" src="https://esomakids.com/images/logo-png.png?1" alt="Open Child Website">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-2"></div>
+           <!---- <h3 class="text-xl font-bold mb-2">E-Learning platform</h3>
+            <p class="text-gray-600 mb-4">Built a deep learning model for image classification using
+                TensorFlow,
+                achieving 95% accuracy on test data.</p>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Css</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Js</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTML5</span>
+            </div>-->
+
+            <!--IFRAME-->
+            <!-- The iframe container (will be shown when the icon is clicked) -->
+            <div id="iframe-container">
+                <button id="close-iframe" src="https://www.checheafrica.com">checheafrica.com</button>
+                <iframe id="iframe" src="https://www.esomakids.com/edtech"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-top-navigation" allowfullscreen
+                    referrerpolicy="no-referrer" allow="fullscreen; autoplay; encrypted-media; cross-origin-isolated">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="sframe.js"></script>
+   
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const element = document.querySelector('.words-animation');
+            observer.observe(element);
+        });
+        function showIframe() {
+            document.getElementById('iframe-container').classList.remove('hidden');
+            document.getElementById('iframe').classList.add('w-full', 'h-64');
+        }
+
+        function closeIframe() {
+            document.getElementById('iframe-container').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
